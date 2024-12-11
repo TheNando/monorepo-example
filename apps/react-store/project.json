@@ -1,0 +1,19 @@
+{
+  "name": "react-store",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/react-store/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/web:webpack",
+      "options": {
+        "postcssConfig": "apps/react-store/postcss.config.js"
+      }
+    },
+    "deploy": {
+      "dependsOn": ["build"],
+      "command": "netlify deploy --dir=dist/react-store"
+    }
+  },
+  "tags": []
+}
