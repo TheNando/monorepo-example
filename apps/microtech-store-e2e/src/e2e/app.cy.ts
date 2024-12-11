@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('react-store', () => {
+describe('microtech-store', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {

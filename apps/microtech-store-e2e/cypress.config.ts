@@ -8,10 +8,10 @@ export default defineConfig({
       cypressDir: 'src',
       bundler: 'vite',
       webServerCommands: {
-        default: 'nx run react-store:serve',
-        production: 'nx run react-store:preview',
+        default: 'nx run microtech-store:serve',
+        production: 'nx run microtech-store:preview',
       },
-      ciWebServerCommand: 'nx run react-store:serve-static',
+      ciWebServerCommand: 'nx run microtech-store:serve-static',
     }),
     baseUrl: 'http://localhost:4200',
   },

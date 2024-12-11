@@ -2,21 +2,21 @@
 
 [![integrated monorepo](https://img.shields.io/static/v1?label=Nx%20setup&message=integrated%20monorepo&color=blue)](https://nx.dev/concepts/integrated-vs-package-based#integrated-repos)
 
-
 Source code for the React monorepo application tutorial on the Nx docs:
+
 - Tutorial: https://nx.dev/getting-started/react-monorepo-tutorial
 
 ## What's inside?
 
-This example contains two React applications and three shared libraries that started from the `react-monorepo` preset. 
+This example contains two React applications and three shared libraries that started from the `react-monorepo` preset.
 
 ```
 npx create-nx-workspace@latest myngapp --preset=react-monorepo
 ```
 
-It contains 
+It contains
 
-- two React application: `apps/react-store` and `apps/inventory`
+- two React application: `apps/microtech-store` and `apps/inventory`
 - three local libraries: `libs/products`, `libs/orders` and `libs/shared/ui` to demo how to modularize a codebase
 - uses [Nx module boundary rules](https://nx.dev/core-features/enforce-project-boundaries) to enforce architectural constraints
 
