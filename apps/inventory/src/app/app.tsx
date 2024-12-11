@@ -14,6 +14,7 @@ export function App() {
         title="Inventory"
         options={[<ProductNavMenu key="product-menu" />]}
       />
+
       <FullPage>
         <Routes>
           <Route path="/" element={<InventoryTable />}></Route>

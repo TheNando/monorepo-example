@@ -99,7 +99,7 @@ export function EditProduct() {
       <UiSelect
         id="category"
         label="Category"
-        options={['router', 'gpu', 'cpu']}
+        options={['cpu', 'gpu', 'mainboard']}
         placeholder="Select a category"
         state={data}
       />

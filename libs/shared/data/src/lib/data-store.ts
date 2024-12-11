@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 export type StoreName = 'products';
 
 export interface Product {
-  category: string;
+  category: 'cpu' | 'gpu' | 'mainboard';
   description: string;
   id: number;
   imageKey: string;
@@ -82,6 +82,3 @@ export const useStore = <T>(store: StoreName) => {
 
   return { data, refetch };
 };
-
-// export const useDeleteIdFromStore = <T>(id: number, store: StoreName) => {
-// }

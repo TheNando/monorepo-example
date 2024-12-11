@@ -5,5 +5,5 @@ export interface FullPageProps {
 }
 
 export function FullPage({ children }: FullPageProps) {
-  return <div className="p-3 w-full">{children}</div>;
+  return <div className="px-6 w-full">{children}</div>;
 }

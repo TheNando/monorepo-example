@@ -7,7 +7,7 @@ export function ProductList() {
 
   return (
     <Container>
-      <PageTitle text="Product List" />
+      <PageTitle text="Products" />
 
       {/* TASK: Fix the console error when this renders */}
       <div className="flex flex-wrap gap-4">
