@@ -12,7 +12,7 @@ module.exports = {
     '../../node_modules/react-daisyui/dist/**/*.js',
   ],
   daisyui: {
-    themes: ['synthwave'],
+    themes: ['synthwave', 'emerald'],
   },
   theme: {
     extend: {},
