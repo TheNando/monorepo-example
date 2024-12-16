@@ -1,0 +1,74 @@
+[
+  {
+    "key": 1,
+    "value": {
+      "category": "cpu",
+      "description": "",
+      "id": 1,
+      "imageKey": "IntelI514xxx",
+      "name": "Intel i5 14500K",
+      "price": "239.97",
+      "quantity": 4
+    }
+  },
+  {
+    "key": 2,
+    "value": {
+      "category": "cpu",
+      "description": "",
+      "id": 2,
+      "imageKey": "Ryzen75xxx",
+      "name": "Ryzen 7 5800X",
+      "price": "199.95",
+      "quantity": 2
+    }
+  },
+  {
+    "key": 3,
+    "value": {
+      "category": "gpu",
+      "description": "",
+      "id": 3,
+      "imageKey": "MsiGeforceRtx3060",
+      "name": "MSI GeForce RTX 3060",
+      "price": "279.99",
+      "quantity": 2
+    }
+  },
+  {
+    "key": 4,
+    "value": {
+      "category": "gpu",
+      "description": "",
+      "id": 4,
+      "imageKey": "GigabyteGVR76",
+      "name": "Gigabyte Radeon RX 7600",
+      "price": "264.99",
+      "quantity": 0
+    }
+  },
+  {
+    "key": 5,
+    "value": {
+      "category": "mainboard",
+      "description": "",
+      "id": 5,
+      "imageKey": "AsusPrimeB450M",
+      "name": "ASUS Prime B450M-A",
+      "price": "79.99",
+      "quantity": 2
+    }
+  },
+  {
+    "key": 6,
+    "value": {
+      "category": "mainboard",
+      "description": "",
+      "id": 6,
+      "imageKey": "MsiProB760P",
+      "name": "MSI PRO B760-P",
+      "price": "146.34",
+      "quantity": 1
+    }
+  }
+]

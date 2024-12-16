@@ -46,6 +46,30 @@ interface RecordParam {
   value: any;
 }
 
+export function importData(file: File) {
+  const reader = new FileReader();
+
+  reader.onload = async function () {
+    if (typeof reader.result !== 'string') {
+      return;
+    }
+
+    const data = JSON.parse(reader.result);
+
+    if (!Array.isArray(data)) {
+      return;
+    }
+
+    data.forEach((item) => {
+      upsertRecord('products', item);
+    });
+  };
+
+  if (file) {
+    reader.readAsText(file);
+  }
+}
+
 export async function upsertRecord(
   store: StoreName,
   { key, value }: RecordParam
