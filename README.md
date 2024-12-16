@@ -1,10 +1,10 @@
-# Tutorial: Building React Apps with an Integrated Monorepo Setup
+# Real-world Monorepo Example
 
-[![integrated monorepo](https://img.shields.io/static/v1?label=Nx%20setup&message=integrated%20monorepo&color=blue)](https://nx.dev/concepts/integrated-vs-package-based#integrated-repos)
+This repo presents an example of a real-world monorepo application built with NX. This project use NX's React monorepo tutorial as a starting point, but then elaborates upon that foundation to provide a more realistic and comprehensive example.
 
-Source code for the React monorepo application tutorial on the Nx docs:
+Source code for the original React monorepo application tutorial from Nx docs:
 
-- Tutorial: https://nx.dev/getting-started/react-monorepo-tutorial
+- Tutorial: https://nx.dev/getting-started/tutorials/react-monorepo-tutorial#creating-a-new-react-monorepo
 
 ## What's inside?
 
