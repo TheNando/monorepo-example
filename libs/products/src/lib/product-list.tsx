@@ -1,9 +1,9 @@
-import { useStore, type Product } from '@react-monorepo/shared-data';
+import { useProductsQuery } from '@react-monorepo/shared-data';
 import { Container, PageTitle } from '@react-monorepo/shared-ui';
 import { ProductCard } from './product-card';
 
 export function ProductList() {
-  const { data: allProducts } = useStore<Product>('products');
+  const { data: allProducts } = useProductsQuery();
 
   return (
     <Container>

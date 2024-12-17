@@ -1,4 +1,14 @@
 import {
+  faPlusSquare,
+  faListAlt,
+  faPenToSquare,
+} from '@fortawesome/free-regular-svg-icons';
+import { faFileImport } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { importData } from '@react-monorepo/shared-data';
+import { useToast } from '@react-monorepo/shared-ui';
+import { useRef, useCallback, useState } from 'react';
+import {
   Button,
   Divider,
   FileInput,
@@ -6,18 +16,10 @@ import {
   Modal,
   Tooltip,
 } from 'react-daisyui';
-import {
-  faPlusSquare,
-  faListAlt,
-  faPenToSquare,
-} from '@fortawesome/free-regular-svg-icons';
-import { faFileImport } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useRef, useCallback, useState } from 'react';
-import { importData } from '@react-monorepo/shared-data';
 
 export function ProductNavMenu() {
   const [file, setFile] = useState<File | null>();
+  const { Toast, showError, showSuccess } = useToast();
 
   const ref = useRef<HTMLDialogElement>(null);
 
@@ -33,12 +35,19 @@ export function ProductNavMenu() {
     setFile(event.target.files[0]);
   };
 
-  const doImport = () => {
+  const doImport = async () => {
     if (!file) {
       return;
     }
 
-    importData(file);
+    try {
+      await importData(file);
+      ref.current?.close();
+      showSuccess('Products imported');
+    } catch (error) {
+      showError('Error updating product');
+      console.error(error);
+    }
   };
 
   return (
@@ -116,6 +125,8 @@ export function ProductNavMenu() {
           </Button>
         </Modal.Actions>
       </Modal>
+
+      <Toast />
     </>
   );
 }

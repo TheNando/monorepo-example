@@ -1,6 +1,6 @@
-import { Select } from 'react-daisyui';
 import { type ObjectState } from '@react-monorepo/shared-data';
 import { ChangeEvent } from 'react';
+import { Select } from 'react-daisyui';
 
 export interface UiSelectProps {
   id: string;

@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { Dropdown, Button, Indicator, Badge, Card } from 'react-daisyui';
-import { useAtomValue } from 'jotai';
 import { ordersAtom } from '@react-monorepo/shared-data';
+import { useAtomValue } from 'jotai';
+import { Dropdown, Button, Indicator, Badge, Card } from 'react-daisyui';
 
 export function OrdersNavMenu() {
   const orders = useAtomValue(ordersAtom);

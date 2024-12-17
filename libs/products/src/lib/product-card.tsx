@@ -1,7 +1,7 @@
 import { ordersAtom, Product } from '@react-monorepo/shared-data';
-import { type ImageAsset, IMAGES } from './product-images';
-import { Badge, Button, Card } from 'react-daisyui';
 import { useAtom } from 'jotai';
+import { Badge, Button, Card } from 'react-daisyui';
+import { type ImageAsset, IMAGES } from './product-images';
 
 interface ProductCardProps {
   product: Product;

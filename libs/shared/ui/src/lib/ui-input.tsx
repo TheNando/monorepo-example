@@ -1,6 +1,6 @@
-import { Input } from 'react-daisyui';
 import { identity, type ObjectState } from '@react-monorepo/shared-data';
 import { FormEvent } from 'react';
+import { Input } from 'react-daisyui';
 
 export interface UiInputProps {
   id: string;

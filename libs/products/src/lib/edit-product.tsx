@@ -1,5 +1,9 @@
-import { Button, Link } from 'react-daisyui';
-
+import {
+  type Product,
+  upsertRecord,
+  useObjectState,
+  useProductsQuery,
+} from '@react-monorepo/shared-data';
 import {
   Container,
   PageTitle,
@@ -8,13 +12,8 @@ import {
   UiTextarea,
   useToast,
 } from '@react-monorepo/shared-ui';
-import {
-  type Product,
-  upsertRecord,
-  useObjectState,
-  useStore,
-} from '@react-monorepo/shared-data';
 import { useEffect } from 'react';
+import { Button, Link } from 'react-daisyui';
 
 const DEFAULT_PRODUCT: Partial<Product> = {
   category: undefined,
@@ -27,7 +26,7 @@ const DEFAULT_PRODUCT: Partial<Product> = {
 };
 
 export function EditProduct() {
-  const { data: allProducts } = useStore<Product>('products');
+  const { data: allProducts } = useProductsQuery();
   const data = useObjectState({ ...DEFAULT_PRODUCT });
   const { Toast, showError, showSuccess } = useToast();
 

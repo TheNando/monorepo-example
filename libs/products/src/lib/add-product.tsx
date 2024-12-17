@@ -1,5 +1,8 @@
-import { Button, Link } from 'react-daisyui';
-
+import {
+  Product,
+  upsertRecord,
+  useObjectState,
+} from '@react-monorepo/shared-data';
 import {
   Container,
   PageTitle,
@@ -7,11 +10,7 @@ import {
   UiSelect,
   UiTextarea,
 } from '@react-monorepo/shared-ui';
-import {
-  Product,
-  upsertRecord,
-  useObjectState,
-} from '@react-monorepo/shared-data';
+import { Button, Link } from 'react-daisyui';
 
 const DEFAULT_PRODUCT: Partial<Product> = {
   category: undefined,

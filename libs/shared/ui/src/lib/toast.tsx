@@ -28,8 +28,10 @@ export function useToast() {
       updateState({ message, status: 'success' }),
     Toast: () =>
       status !== 'hidden' && (
-        <DaisyToast vertical="bottom" horizontal="start">
-          <Alert status={status}>{message}</Alert>
+        <DaisyToast className="z-50" horizontal="start" vertical="bottom">
+          <Alert className="shadow-md" status={status}>
+            {message}
+          </Alert>
         </DaisyToast>
       ),
   };

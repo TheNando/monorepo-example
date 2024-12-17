@@ -1,5 +1,7 @@
+import { QueryClient, useQuery } from '@tanstack/react-query';
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
-import { useEffect, useState } from 'react';
+
+export const queryClient = new QueryClient();
 
 export type StoreName = 'products';
 
@@ -47,27 +49,37 @@ interface RecordParam {
 }
 
 export function importData(file: File) {
-  const reader = new FileReader();
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
 
-  reader.onload = async function () {
-    if (typeof reader.result !== 'string') {
-      return;
+    reader.onload = async function () {
+      if (typeof reader.result !== 'string') {
+        return;
+      }
+
+      const data = JSON.parse(reader.result);
+
+      if (!Array.isArray(data)) {
+        return;
+      }
+
+      await Promise.all(
+        data.map(async (item) => await upsertRecord('products', item))
+      );
+
+      queryClient.invalidateQueries({ queryKey: ['products'] });
+
+      resolve(true);
+    };
+
+    reader.onerror = () => {
+      reject(new Error('Error importing data'));
+    };
+
+    if (file) {
+      reader.readAsText(file);
     }
-
-    const data = JSON.parse(reader.result);
-
-    if (!Array.isArray(data)) {
-      return;
-    }
-
-    data.forEach((item) => {
-      upsertRecord('products', item);
-    });
-  };
-
-  if (file) {
-    reader.readAsText(file);
-  }
+  });
 }
 
 export async function upsertRecord(
@@ -77,10 +89,10 @@ export async function upsertRecord(
   const db = await initializeDb();
 
   if (key === undefined) {
-    return db.add(store, value);
+    await db.add(store, value);
+  } else {
+    await db.put(store, value);
   }
-
-  return db.put(store, value);
 }
 
 export async function getStore(store: StoreName) {
@@ -89,20 +101,8 @@ export async function getStore(store: StoreName) {
   return db.getAll(store);
 }
 
-export const useStore = <T>(store: StoreName) => {
-  const [data, setData] = useState<T[]>();
-  const [shouldRefetch, setShouldRefetch] = useState(true);
-
-  const refetch = () => setShouldRefetch(true);
-
-  useEffect(() => {
-    if (!shouldRefetch) {
-      return;
-    }
-
-    getStore(store).then((response) => setData(response as T[]));
-    setShouldRefetch(false);
-  }, [shouldRefetch]);
-
-  return { data, refetch };
-};
+export const useProductsQuery = () =>
+  useQuery({
+    queryKey: ['products'],
+    queryFn: () => getStore('products'),
+  });

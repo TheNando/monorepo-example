@@ -1,4 +1,3 @@
-import { Route, Routes } from 'react-router-dom';
 import {
   AddProduct,
   EditProduct,
@@ -6,6 +5,7 @@ import {
   ProductNavMenu,
 } from '@react-monorepo/products';
 import { FullPage, Nav } from '@react-monorepo/shared-ui';
+import { Route, Routes } from 'react-router-dom';
 
 export function App() {
   return (

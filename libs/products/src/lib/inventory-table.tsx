@@ -1,11 +1,3 @@
-import {
-  upsertRecord,
-  useStore,
-  type Product,
-} from '@react-monorepo/shared-data';
-import { Container, PageTitle, useToast } from '@react-monorepo/shared-ui';
-import { Button, Table } from 'react-daisyui';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPenToSquare,
@@ -13,9 +5,16 @@ import {
   faSquareMinus,
   faSquarePlus,
 } from '@fortawesome/free-regular-svg-icons';
+import {
+  upsertRecord,
+  useProductsQuery,
+  type Product,
+} from '@react-monorepo/shared-data';
+import { Container, PageTitle, useToast } from '@react-monorepo/shared-ui';
+import { Button, Table } from 'react-daisyui';
 
 export function InventoryTable() {
-  const { data: allProducts, refetch } = useStore<Product>('products');
+  const { data: allProducts, refetch } = useProductsQuery();
   const { Toast, showError, showSuccess } = useToast();
 
   const editProduct = async (data: Product) => {

@@ -1,7 +1,6 @@
+import { type ObjectState } from '@react-monorepo/shared-data';
 import { FormEvent } from 'react';
 import { Textarea } from 'react-daisyui';
-
-import { type ObjectState } from '@react-monorepo/shared-data';
 
 export interface UiTextareaProps {
   id: string;
