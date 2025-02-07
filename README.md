@@ -37,4 +37,4 @@ This repo also uses [Nx module boundary rules](https://nx.dev/core-features/enfo
 
 ## Getting started
 
-Finally, check out the [Getting Started](https://github.com/mailgun/TheNando/wiki/Getting-started) wiki page to setup your local branch and access the development challenge stories.
+Finally, check out the [Getting Started](https://github.com/TheNando/monorepo-example/wiki/Getting-started) wiki page to setup your local branch and access the development challenge stories.
