@@ -1,31 +1,40 @@
-# Tutorial: Building React Apps with an Integrated Monorepo Setup
+# Frontend Challenge: PC Store Monorepo
 
-[![integrated monorepo](https://img.shields.io/static/v1?label=Nx%20setup&message=integrated%20monorepo&color=blue)](https://nx.dev/concepts/integrated-vs-package-based#integrated-repos)
+[![monorepo](https://img.shields.io/static/v1?label=Nx%20setup&message=monorepo&color=blue)](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial#creating-a-new-react-monorepo)
 
-Source code for the React monorepo application tutorial on the Nx docs:
+Welcome to the frontend developer monorepo challenge! This repository contains a nearly complete frontend application built with NRWL's NX monorepo build system. Designed to resembles a real-world, enterprise-scalable, frontend stack, your task will be to complete a series of stories including adding features, fixing bugs, and writing tests for the existing applications. This challenge is meant to showcase your frontend development skills in a realistic scenario.
 
-- Tutorial: https://nx.dev/getting-started/react-monorepo-tutorial
+## What's included?
 
-## What's inside?
+This repo contains two React applications and four libraries:
 
-This example contains two React applications and three shared libraries that started from the `react-monorepo` preset.
+- React application:
+  - `apps/inventory` - add new products to store inventory
+  - `apps/microtech-store` - create order by adding products to a cart and checkout
+- local libraries:
+  - `libs/products` - import, add, edit, view products
+  - `libs/orders` - add products to cart and checkout
+  - `libs/shared/data` - shared app state, types, DB management, and utils
+  - `libs/shared/ui` - common UI components
 
-```
-npx create-nx-workspace@latest myngapp --preset=react-monorepo
-```
+This repo also uses [Nx module boundary rules](https://nx.dev/core-features/enforce-project-boundaries) to enforce architectural constraints
 
-It contains
+## Tech stack
 
-- two React application: `apps/microtech-store` and `apps/inventory`
-- three local libraries: `libs/products`, `libs/orders` and `libs/shared/ui` to demo how to modularize a codebase
-- uses [Nx module boundary rules](https://nx.dev/core-features/enforce-project-boundaries) to enforce architectural constraints
+- [NX](https://nx.dev/) - monorepo management
+- [Vite](https://vite.dev/) - build tool
+- [TypeScript](https://www.typescriptlang.org/) - syntactic JavaScript superset adding static typing
+- [React](https://react.dev/) - frontend web framework
+- [React Router](https://reactrouter.com/) - routing library
+- [Jotai](https://jotai.org/) - atomic app state management
+- [TanStack Query](https://tanstack.com/query/latest) - async state management
+- [idb](https://github.com/jakearchibald/idb) - promise-based IndexedDb wrapper
+- [Tailwind](https://tailwindcss.com/) - CSS framework
+- [Daisy UI](https://daisyui.com/) - Tailwind component library
+- [Font Awesome](https://fontawesome.com/) - icon font library
+- [Cypress](https://www.cypress.io/) - End-to-end and component testing framework
+- [Testing Library](https://testing-library.com/) - Unit testing framework
 
-Follow through the tutorial linked above for more details.
+## Getting started
 
-## How to run it
-
-Clone it locally, install all dependencies using `npm install`. You can then run commands Like
-
-- `npx nx build` to build the React application
-- `npx nx serve` to serve the app
-- you can use `npx nx graph` to visualize the structure
+Finally, check out the [Getting Started](https://github.com/mailgun/TheNando/wiki/Getting-started) wiki page to setup your local branch and access the development challenge stories.
